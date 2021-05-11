@@ -16,31 +16,21 @@ API Endpoint: http://api.intigral-ott.net/popcorn-api-rs-7.9.10/v1/promotions
 * Intellij IDEA/Eclipse
 * Java JDK 8+
 * JDK and Maven installed and Set in your classpath
-* Clone/download the samplerestassureddemo project (https://github.com/eliasnogueira/combined-credit-api)
+* Clone/download the samplerestassureddemo project (https://github.com/Prasun-Bajpai/promotion-api-bdd-demo)
 
 ## How to execute the tests
 Import the project into Intellij IDEA/Eclipse.
-You can open the test class(PromotionApiTest) on `src\test\java\com\intigral\api` and execute it.
-Or we can test it using testng.xml as well which is placed inside directory structure "samplerestassureddemo\testng.xml"
-
-We can also run it from command prompt.
+You can open the runner class(PromotionAPIRunnerTest) on `promotion-api-bdd-demo\src\test\java\com\intigral\api\runner\PromotionAPIRunnerTest.java` and execute it.
+Or you can test it using mvn clean test command from command prompt or IDE.
 
 ### Running the test suites
-The test suites can be run directly by your IDE or by command line.
+The test suite can be run directly by your IDE or by command line.
 If you run `mvn test` all the tests will execute because it's the regular Maven lifecycle to run all the tests.
 
 ### Generating the test report
-Pre-requsites to enable IntelliJ report generation:
-Form Edit configurations
-1. On the “Listeners tab”, Use default listeners should be checked.
-2. And Output directory should be set correctly.
-3. Check on Use default reporters option which will create test-output folder in your root folder with all reports.
-4. In addition to above steps if you still face the issue, you can even add Listener like “EmailableReporter” or “FailedReporter” in the “Run Configurations”, it will generate test-output directory in your workspace.
+On execution of test or mvn test command, test execution report get generated automatically.
 
-This project uses testng reports to automatically generate the test report.
-
-You can access the reports at '\samplerestassureddemo\test-output\emailable-report.html'
-* Right click on the emailable-report.html, select 'Open in Browser' and the select the browser.
+You can access the reports at 'promotion-api-bdd-demo\target\cucumber-reports\index.html'
 
 ## About the Project Structure
 
@@ -50,14 +40,9 @@ You can access the reports at '\samplerestassureddemo\test-output\emailable-repo
 Contains pojo for all the objects present in the API response
 
 #### utils
-util package contains promotion API constants, helper and validator class for getting and setting the initial aspects to make the requests using RestAssured.
+util package contains promotion API constants, helper and validator class for getting and setting the initial aspects to make the requests.
 
 ### src/test/java/com/intigral/api
 
-#### PromotionApiTest
-Test that verifies successful and error API response, its validation and presence.
-
-## Libraries
-* [RestAssured](http://rest-assured.io/) library to test REST APIs
-* [testng]
-* [jackson-databind]
+#### PromotionAPIRunnerTest
+This class runs the test cases by defining properties which binds the feature file and step class.
