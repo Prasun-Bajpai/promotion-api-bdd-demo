@@ -1,4 +1,4 @@
-# Rest-Assured Complete Assignment
+# Promotion API BDD Complete Assignment
 
 * [Required Software](#required-software)
 * [How to execute the tests](#how-to-execute-the-tests)
